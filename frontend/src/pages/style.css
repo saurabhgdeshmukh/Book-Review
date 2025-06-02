@@ -1,0 +1,290 @@
+
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-container input {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.auth-container button {
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background-color: #0056b3;
+}
+
+.auth-container .signup-link {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.auth-container .signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-container .signup-link a:hover {
+  text-decoration: underline;
+}
+
+.auth-container p {
+  text-align: center;
+  color: red;
+}
+/* Shared container for auth and book forms */
+.form-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 32px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-container input,
+.form-container textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-container textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-container button {
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #218838;
+}
+/* === Book Detail Page === */
+.book-detail-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.book-detail-container h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.book-detail-container p {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.book-detail-container h3,
+.book-detail-container h4 {
+  margin-top: 24px;
+  color: #333;
+}
+
+.book-detail-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.book-detail-container li {
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+}
+
+.book-detail-container form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book-detail-container input,
+.book-detail-container textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.book-detail-container button {
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: #0069d9;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.book-detail-container button:hover {
+  background-color: #0056b3;
+}
+/* === Book List Page === */
+.book-list-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.book-list-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.book-list-container button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.book-list-container button:hover {
+  background-color: #0056b3;
+}
+
+.book-list-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.book-list-container li {
+  margin: 12px 0;
+  padding: 12px;
+  background-color: #f7f7f7;
+  border-radius: 6px;
+}
+
+.book-list-container a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.book-list-container a:hover {
+  color: #007bff;
+}
+/* === Shared Form Styles === */
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container input {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-container button {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+.secondary-btn {
+  margin-top: 16px;
+  background-color: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.secondary-btn:hover {
+  background-color: #007bff;
+  color: #fff;
+}
