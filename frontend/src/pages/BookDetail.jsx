@@ -23,6 +23,7 @@ const BookDetail = () => {
       try {
         const res = await API.get(`/books/${id}`);
         setBook(res.data);
+        console.log(res.data)
         setReviews(res.data.reviews);
       } catch (err) {
         console.error('Error fetching book details:', err);

@@ -11,25 +11,28 @@ const BookList = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  const fetchBooks = async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      params.append('page', page);
-      params.append('limit', 5);
-      if (author) params.append('author', author);
-      if (genre) params.append('genre', genre);
+ const fetchBooks = async () => {
+  setLoading(true);
+  try {
+    const params = new URLSearchParams();
+    params.append('page', page);
+    params.append('limit', 10);
+    if (author) params.append('author', author);
+    if (genre) params.append('genre', genre);
 
-      const res = await API.get(`/books?${params.toString()}`);
-      setBooks(res.data|| []);
-      setTotalPages(res.data.totalPages || 1);
-    } catch (err) {
-      console.error('Failed to fetch books:', err);
-      setBooks([]);
-    } finally {
-      setLoading(false);
-    }
-  };
+    const res = await API.get(`/books?${params.toString()}`);
+    setBooks(res.data.data|| []);
+    // console.log(res.data.data)
+    // console.log(books)
+    setTotalPages(res.data.totalPages || 1);
+  } catch (err) {
+    console.error('Failed to fetch books:', err);
+    setBooks([]);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   useEffect(() => {
     fetchBooks();
@@ -37,7 +40,7 @@ const BookList = () => {
 
   const handleFilter = (e) => {
     e.preventDefault();
-    setPage(1); // reset to first page when filters change
+    setPage(1); 
     fetchBooks();
   };
 

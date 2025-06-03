@@ -25,6 +25,18 @@ router.get('/', async (req, res) => {
   const offset = (page - 1) * limit;
 
   try {
+    // 1. Get total count for pagination
+    const countResult = await pool.query(
+      `SELECT COUNT(*) FROM books
+       WHERE ($1::text IS NULL OR author ILIKE '%' || $1 || '%')
+         AND ($2::text IS NULL OR genre ILIKE '%' || $2 || '%')`,
+      [author || null, genre || null]
+    );
+
+    const totalCount = parseInt(countResult.rows[0].count);
+    const totalPages = Math.ceil(totalCount / limit);
+
+    // 2. Get paginated data
     const result = await pool.query(
       `SELECT * FROM books
        WHERE ($1::text IS NULL OR author ILIKE '%' || $1 || '%')
@@ -33,11 +45,18 @@ router.get('/', async (req, res) => {
        LIMIT $3 OFFSET $4`,
       [author || null, genre || null, limit, offset]
     );
-    res.json(result.rows);
+
+    // 3. Return both
+    res.json({
+      data: result.rows,
+      totalPages,
+      currentPage: Number(page)
+    });
   } catch (err) {
     res.status(500).json({ message: 'Error fetching books.', error: err.message });
   }
 });
+
 
 router.get('/:id', async (req, res) => {
   const bookId = req.params.id;
